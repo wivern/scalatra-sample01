@@ -4,7 +4,7 @@ lazy val root = (project in file(".")).settings(
   organization := "wivern",
   name := "scalatra-sample01",
   version := "0.1.0-SNAPSHOT",
-  scalaVersion := "2.11.6",
+  scalaVersion := "2.11.7",
   scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature"),
   libraryDependencies ++= Seq(
     "org.scalatra"      %% "scalatra"          % scalatraVersion,
@@ -15,7 +15,7 @@ lazy val root = (project in file(".")).settings(
     "com.mchange"       % "c3p0"               % "0.9.5.1",
     "com.github.scribejava" % "scribejava-apis" % "2.2.2",
     "ch.qos.logback"    %  "logback-classic"   % "1.1.3"            % "runtime",
-    "org.eclipse.jetty" %  "jetty-webapp"      % "9.2.10.v20150310" % "container;compile",
+    "org.eclipse.jetty" %  "jetty-webapp"      % "9.2.14.v20151106" % "container;compile",
     "javax.servlet"     %  "javax.servlet-api" % "3.1.0"            % "provided"
   )
 ).settings(jetty(): _*)
