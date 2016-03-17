@@ -9,7 +9,8 @@ import org.squeryl.PrimitiveTypeMode._
  * @since 17.03.2016 16:07
  */
 trait DatabaseInititalizer {
-  def initDb(implicit logger: Logger) {
+  implicit val logger: Logger
+  def initDb() {
     logger.info("Applying database schema")
     transaction {
       Catalogue.printDdl

@@ -15,7 +15,7 @@ class HelloServlet extends ScalatraServlet with ScalateSupport with DatabaseSess
   get("/"){
     contentType = "text/html;charset=UTF-8"
     val products = Product.all.toList
-    scaml("/hello-scalate.scaml", "products" -> products)
+    scaml("/index.scaml", "products" -> products)
   }
   get("/hello"){
     <html>

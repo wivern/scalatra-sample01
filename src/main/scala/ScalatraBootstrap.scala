@@ -23,10 +23,10 @@ class ScalatraBootstrap extends LifeCycle with DatabaseInititalizer {
     SessionFactory.concreteFactory = Some(() => connection)
 
     def connection = {
-      logger.info("Creating connection with c3po connection pool")
+      logger.debug("Creating connection with c3po connection pool")
       Session.create(cpds.getConnection, new H2Adapter)
     }
-    initDb(logger)
+    initDb()
   }
 
   private def closeDbConnection() {
