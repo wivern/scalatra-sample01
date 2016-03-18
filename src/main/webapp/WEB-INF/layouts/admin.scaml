@@ -1,6 +1,7 @@
 -@ val title: String = ""
 -@ val body: String = ""
 -@ val currentPath: String
+-@ val user: domain.User
 
 - import helpers.UrlHelpers._
 
@@ -143,7 +144,7 @@
           %li.dropdown
             %a.dropdown-toggle(href="#" data-toggle="dropdown")
               %i.fa.fa-user
-                John Smith
+                = user.name
                 %b.caret
             %ul.dropdown-menu
               %li
@@ -202,8 +203,8 @@
                 %li
                   %a(href="#")
                     Dropdown Item
-            %li
-              %a(href="blank.html")
+            %li(class={if (currentUrl("/blank.html")(currentPath)) "active"})
+              %a(href="/admin/blank.html")
                 %i.fa.fa-fw.fa-file
                 Blank Page
             %li

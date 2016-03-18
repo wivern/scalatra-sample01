@@ -22,7 +22,7 @@ trait DatabaseInititalizer {
       ))
       Catalogue.users.insert(List(
         new User(1, "admin", "admin@gmail.com", "admin"),
-        new User(2, "user", "user@gmail.com", "user")
+        new User(2, "John Doe", "user@gmail.com", "user")
       ))
     }
   }

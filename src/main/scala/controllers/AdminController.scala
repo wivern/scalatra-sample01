@@ -17,6 +17,7 @@ class AdminController extends ScalatraServlet with ScalateSupport with DatabaseS
   before(){
     requireAuth()
     templateAttributes("currentPath") = requestPath(request)
+    templateAttributes("user") = user
   }
 
   val root = get("/?"){
