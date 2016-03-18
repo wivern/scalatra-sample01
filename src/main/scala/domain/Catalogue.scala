@@ -12,11 +12,15 @@ object Catalogue extends Schema{
   val categories = table[Category]("CATEGORIES")
   val productCategories = manyToManyRelation(products, categories).
     via[ProductCategory]((p, c, pc) => (pc.categoryId === c.id, p.id === pc.productId))
+  val users = table[User]("USERS")
 
   on(products)(p => declare(
     p.index is(unique, indexed)
   ))
   on(categories)(c => declare(
     c.name is indexed
+  ))
+  on(users)(u => declare(
+    u.email is(unique, indexed)
   ))
 }

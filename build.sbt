@@ -9,6 +9,7 @@ lazy val root = (project in file(".")).settings(
   libraryDependencies ++= Seq(
     "org.scalatra"      %% "scalatra"          % scalatraVersion,
     "org.scalatra"      %% "scalatra-scalate"  % scalatraVersion,
+    "org.scalatra"      %% "scalatra-auth"     % scalatraVersion,
     "org.scalatra"      %% "scalatra-specs2"   % scalatraVersion    % "test",
     "org.squeryl"       % "squeryl_2.11"       % "0.9.5-7",
     "com.h2database"    % "h2"                 % "1.4.181",

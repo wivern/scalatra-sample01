@@ -1,6 +1,6 @@
 package util
 
-import domain.{Product, Catalogue}
+import domain.{User, Product, Catalogue}
 import org.slf4j.Logger
 import org.squeryl.PrimitiveTypeMode._
 
@@ -19,6 +19,10 @@ trait DatabaseInititalizer {
         new Product(1, "Test1", "TT00001"),
         new Product(2, "Test2", "TT00002"),
         new Product(3, "Test3", "TT00003")
+      ))
+      Catalogue.users.insert(List(
+        new User(1, "admin", "admin@gmail.com", "admin"),
+        new User(2, "user", "user@gmail.com", "user")
       ))
     }
   }
