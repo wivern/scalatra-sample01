@@ -3,8 +3,10 @@ package controllers
 import auth.AuthenticationSupport
 import domain.{Product, Catalogue}
 import helpers.Keys
-import org.scalatra.{FlashMapSupport, ScalatraServlet}
-import org.scalatra.scalate.ScalateSupport
+import org.fusesource.scalate.Binding
+import org.scalatra.i18n.Messages
+import org.scalatra.{RouteTransformer, CookieContext, FlashMapSupport, ScalatraServlet}
+import org.scalatra.scalate.{ScalateI18nSupport, ScalateSupport}
 import org.slf4j.LoggerFactory
 import util.DatabaseSessionSupport
 
@@ -12,8 +14,7 @@ import util.DatabaseSessionSupport
  * @author VKoulakov
  * @since 14.03.2016 19:05
  */
-class IndexController extends ScalatraServlet with ScalateSupport with DatabaseSessionSupport
-  with AuthenticationSupport with FlashMapSupport{
+class IndexController extends ControllerBase{
   val logger =  LoggerFactory.getLogger(getClass)
   get("/"){
     contentType = "text/html;charset=UTF-8"

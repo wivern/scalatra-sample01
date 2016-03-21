@@ -3,8 +3,9 @@
 
 - import domain.Product
 -@ val products : List[Product]
+-@ val messages : org.scalatra.i18n.Messages
 
-Hello, Scalate!!!+
+%h1= messages.get("greeting").getOrElse("not found")
 
 %p
     = collection(products)
